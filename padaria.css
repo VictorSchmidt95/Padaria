@@ -1,0 +1,262 @@
+/* =========================================
+   1. RESET E ESTRUTURA GERAL
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    background-color: #e6d5b8; /* Bege da P&C */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header (Cabeçalho) */
+.logo-container {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #e6d5b8;
+}
+
+.logo-principal {
+    max-width: 150px;
+    height: auto;
+    border-radius: 50%;
+}
+
+.barra-preta {
+    height: 8px;
+    background-color: #000;
+    border: none;
+}
+
+/* Container Principal */
+.container {
+    padding: 30px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* =========================================
+   2. ESTILOS DA PÁGINA INICIAL (HOME - 2x2)
+   ========================================= */
+
+/* Título "O que você está buscando?" */
+.titulo-chamada {
+    text-align: center;
+    font-size: 1.6rem; /* Ajustei levemente para mobile */
+    margin-bottom: 30px;
+    font-weight: 700;
+    color: #5c4033; /* Marrom escuro para destaque */
+}
+
+/* GRADE 2x2 (A MÁGICA ACONTECE AQUI) */
+.menu-categorias {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 colunas iguais sempre */
+    gap: 15px;                      /* Espaço entre os cartões */
+}
+
+/* Link que envolve o cartão */
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+/* O visual do cartão (Quadrado Branco) */
+.card {
+    background-color: #fcfcfc;    /* Branco quase puro */
+    border: 1px solid #d1c0a5;    /* Borda fina bege */
+    border-radius: 12px;          /* Cantos arredondados */
+    padding: 20px 10px;           /* Espaçamento interno */
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05); /* Sombra suave */
+    
+    /* Centraliza o conteúdo verticalmente */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* Garante que todos tenham a mesma altura */
+}
+
+.card:active {
+    transform: scale(0.98); /* Efeito de clique no celular */
+    background-color: #fff;
+}
+
+/* Ícones dentro dos cards */
+.icone { 
+    font-size: 2.5rem; 
+    display: block; 
+    margin-bottom: 10px;
+    color: #333; 
+}
+
+.card h2 { 
+    font-size: 1.1rem; /* Tamanho bom para caber lado a lado */
+    margin-bottom: 0;
+    font-weight: 600;
+    color: #5c4033;
+}
+
+.card p { 
+    font-size: 0.8rem; 
+    color: #666; 
+    display: none; /* Ocultei a descrição pequena para ficar limpo igual a foto */
+}
+
+/* =========================================
+   3. ESTILOS DAS PÁGINAS INTERNAS (PRODUTOS)
+   ========================================= */
+
+/* Topo com Botão Voltar */
+.topo-lista {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.btn-voltar {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+h1 { font-size: 1.8rem; }
+
+/* Caixa branca transparente atrás dos produtos */
+.grupo-produtos {
+    background: rgba(255, 255, 255, 0.6);
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    border: 1px solid #d1c0a5;
+}
+
+/* Subtítulos (ex: Salgadinhos de Festa) */
+.grupo-produtos h3 {
+    text-align: center;
+    display: block;
+    width: fit-content;
+    margin: 0 auto 20px auto;
+    color: #5c4033;
+    border-bottom: 2px solid #5c4033;
+    padding-bottom: 5px;
+}
+
+/* Espaço para Imagem */
+.espaco-imagem {
+    background-color: #ccc;
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    font-weight: bold;
+    margin-bottom: 25px;
+    overflow: hidden;
+}
+
+.espaco-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Listas e Itens */
+.lista-sabores {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.lista-sabores li {
+    padding: 8px 0;
+    border-bottom: 1px dashed #bbb;
+}
+
+.lista-sabores-dupla {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.item-individual {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #ddd;
+    font-weight: 500;
+}
+
+.preco-item { color: #d35400; font-weight: bold; }
+
+/* Tabelas e Caixas de Preço */
+.caixa-preco {
+    background-color: #fff;
+    text-align: center;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #d35400;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.detalhe-preco { font-size: 0.9rem; color: #333; font-weight: normal; }
+
+.tabela-precos-box {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.linha-preco {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.linha-preco.destaque {
+    color: #d35400;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 10px;
+    border-top: 2px solid #eee;
+    padding-top: 15px;
+    border-bottom: none;
+}
+
+/* Botão WhatsApp */
+.btn-whatsapp {
+    display: block;
+    background-color: #25d366;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.2s;
+}
+
+.btn-whatsapp:active { transform: scale(0.95); }
